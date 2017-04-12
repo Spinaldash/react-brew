@@ -1,0 +1,78 @@
+body {
+  background: #d4d4d4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+}
+.deck-selector {
+  background: #fff;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 2rem;
+  border: 2px solid #000;
+}
+.deck-selector input,
+.deck-selector button {
+  width: 100%;
+}
+.deck-selector input[type="text"],
+.deck-selector button[type="text"] {
+  text-align: center;
+  font-size: 3rem;
+}
+.deck-builder {
+  display: flex;
+  background-color: red;
+  height: 100vh;
+}
+
+.preview-view-item {
+  background-color: blue;
+  flex: 1
+}
+.library-view-item {
+  background-color: green;
+  flex: 5
+}
+.card-dock-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+}
+.card-item {
+  background: tomato;
+  padding: 5px;
+  width: 20vw;
+  height: 25vw;
+  max-width: 168px;
+  max-height: 250px;
+  margin-top: 2vh;
+
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+}
+
+.card-preview-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+}
+.card-preview-item {
+  background: purple;
+  padding: 5px;
+  width: 100%;
+  height: 4vw;
+  margin-top: 0;
+  border: 1px solid black;
+
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+}
