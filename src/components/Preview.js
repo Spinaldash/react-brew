@@ -1,4 +1,5 @@
 import React from 'react';
+import PreviewCard from './PreviewCard';
 
 class Preview extends React.Component {
   render() {
@@ -6,13 +7,10 @@ class Preview extends React.Component {
       <div className="preview-view-item">
         <p>Preview</p>
         <div className="card-preview-container">
-          <div className="card-preview-item">1</div>
-          <div className="card-preview-item">2</div>
-          <div className="card-preview-item">3</div>
-          <div className="card-preview-item">4</div>
-          <div className="card-preview-item">5</div>
-          <div className="card-preview-item">6</div>
-          <div className="card-preview-item">7</div>
+          <PreviewCard cardName="1"></PreviewCard>
+          <PreviewCard cardName="2"></PreviewCard>
+          <PreviewCard cardName="3"></PreviewCard>
+          <PreviewCard cardName="4"></PreviewCard>
         </div>
       </div>
     )
