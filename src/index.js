@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import DeckBuilder from './components/DeckBuilder';
-import DeckPicker from './components/DeckPicker';
+import { render } from 'react-dom';
 import './css/style.css';
+import Root from './components/Root';
 
-ReactDOM.render(
-  <DeckBuilder />,
-  document.getElementById('root')
+
+render(
+  <Root/>,
+  document.getElementById('main')
 );
