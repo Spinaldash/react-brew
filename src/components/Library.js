@@ -1,4 +1,5 @@
 import React from 'react';
+import LibraryCard from './LibraryCard'
 
 class Library extends React.Component {
   render() {
@@ -6,12 +7,12 @@ class Library extends React.Component {
       <div className="library-view-item">
         <p>Library</p>
         <div className='card-dock-container'>
-          <div className='card-item'>1</div>
-          <div className='card-item'>2</div>
-          <div className='card-item'>3</div>
-          <div className='card-item'>4</div>
-          <div className='card-item'>5</div>
-          <div className='card-item'>6</div>
+          <LibraryCard text="1"></LibraryCard>
+          <LibraryCard text="2"></LibraryCard>
+          <LibraryCard text="3"></LibraryCard>
+          <LibraryCard text="4"></LibraryCard>
+          <LibraryCard text="5"></LibraryCard>
+          <LibraryCard text="6"></LibraryCard>
         </div>
       </div>
     )

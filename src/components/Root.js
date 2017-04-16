@@ -1,7 +1,6 @@
 import React from 'react';
 import DeckBuilder from './DeckBuilder';
 import DeckPicker from './DeckPicker';
-// import NotFound from './NotFound';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 const About = () => (
@@ -55,7 +54,7 @@ const Root = () => (
       </ul>
 
       <hr/>
-      
+
       */}
 
 
