@@ -12,7 +12,7 @@ class Library extends React.Component {
           <LibraryCard text="3"></LibraryCard>
           <LibraryCard text="4"></LibraryCard>
           <LibraryCard text="5"></LibraryCard>
-          <LibraryCard text="6"></LibraryCard>
+          <LibraryCard text="one"></LibraryCard>
         </div>
       </div>
     )

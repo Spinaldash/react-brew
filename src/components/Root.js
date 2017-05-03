@@ -1,7 +1,9 @@
 import React from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+
 import DeckBuilder from './DeckBuilder';
 import DeckPicker from './DeckPicker';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+
 
 const About = () => (
   <div>

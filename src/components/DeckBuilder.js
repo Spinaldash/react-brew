@@ -1,6 +1,6 @@
 import React from 'react';
 import Library from './Library'
-import Preview from './Preview'
+import PreviewContainer from '../containers/PreviewContainer'
 
 // We need to add in Match recieving so we can get a deckId
 class DeckBuilder extends React.Component {
@@ -9,8 +9,8 @@ class DeckBuilder extends React.Component {
       <div>
         <div className="deck-builder">
           <Library />
-          <Preview />
-          </div>
+          <PreviewContainer />
+        </div>
       </div>
     )
   }
