@@ -1,5 +1,5 @@
 import React from 'react';
-import Library from './Library'
+import LibraryContainer from '../containers/LibraryContainer'
 import PreviewContainer from '../containers/PreviewContainer'
 
 // We need to add in Match recieving so we can get a deckId
@@ -8,7 +8,7 @@ class DeckBuilder extends React.Component {
     return (
       <div>
         <div className="deck-builder">
-          <Library />
+          <LibraryContainer />
           <PreviewContainer />
         </div>
       </div>

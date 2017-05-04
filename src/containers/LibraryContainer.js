@@ -1,10 +1,10 @@
-import Preview from '../components/Preview';
+import Library from '../components/Library';
 import { connect } from 'react-redux';
 import { addCard } from '../actions/index'
 
 const mapStateToProps = (state) => {
   return {
-    cards: state
+    // cards: state
   }
 }
 
@@ -16,9 +16,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const PreviewContainer = connect(
+const LibraryContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Preview)
+)(Library)
 
-export default PreviewContainer;
+export default LibraryContainer;
