@@ -1,8 +1,6 @@
 import { defaultState } from '../data/sampleData';
 
 const todo = (state = [], action) => {
-  console.log('running todo reducer');
-  console.log('action: ', action)
   switch (action.type) {
     case 'ADD_CARD':
       return [...state, {
@@ -26,7 +24,6 @@ const todo = (state = [], action) => {
 }
 
 const todos = (state = defaultState, action) => {
-  console.log('in root reducer action: ', action.type)
   switch (action.type) {
     case 'ADD_CARD':
       return {

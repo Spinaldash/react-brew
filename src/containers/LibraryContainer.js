@@ -4,7 +4,7 @@ import { addCard } from '../actions/index'
 
 const mapStateToProps = (state) => {
   return {
-    // cards: state
+    state
   }
 }
 

@@ -1,16 +1,16 @@
 export const defaultState = {
   library: [
     {
-      name: "card1",
-      id:101
+      cardName: "Lava Burst",
+      id:104
     },
     {
-      name: "card2",
-      id:102
+      cardName: "Dragon's Roar",
+      id:105
     },
     {
-      name: "card3",
-      id:103
+      cardName: "Street Wraith",
+      id:106
     }
   ],
   deck:[

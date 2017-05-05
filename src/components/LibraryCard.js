@@ -8,8 +8,8 @@ import React from 'react';
 //   }
 // }
 
-const LibraryCard = ({text, onCardClick}) => (
-  <div className='card-item' onClick={() => {onCardClick(text)}}>{text}</div>
+const LibraryCard = ({cardName, onCardClick}) => (
+  <div className='card-item' onClick={() => {onCardClick(cardName)}}>{cardName}</div>
 )
 
 export default LibraryCard;
