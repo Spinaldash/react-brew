@@ -8,10 +8,6 @@ class Library extends React.Component {
         <p>Library</p>
         <div className='card-dock-container'>
           <LibraryCard text="1" onCardClick={this.props.onCardClick}></LibraryCard>
-          <LibraryCard text="2"></LibraryCard>
-          <LibraryCard text="3"></LibraryCard>
-          <LibraryCard text="4"></LibraryCard>
-          <LibraryCard text="5"></LibraryCard>
           <LibraryCard text="one" onCardClick={this.props.onCardClick}></LibraryCard>
         </div>
       </div>

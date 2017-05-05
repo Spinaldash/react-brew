@@ -6,3 +6,8 @@ export const addCard = (cardName) => {
     cardName
   }
 }
+export const loadSamples = () => {
+  return {
+    type: 'LOAD_SAMPLES',
+  }
+}

@@ -1,13 +1,16 @@
-const todo = (state = {}, action) => {
+import { defaultState } from '../data/sampleData';
+
+const todo = (state = [], action) => {
   console.log('running todo reducer');
   console.log('action: ', action)
   switch (action.type) {
     case 'ADD_CARD':
-      return {
+      return [...state, {
         id: action.id,
         cardName: action.cardName,
-        completed: false
-      }
+        completed: false,
+        count: '1'
+      }]
     case 'TOGGLE_TODO':
       if (state.id !== action.id) {
         return state
@@ -22,14 +25,14 @@ const todo = (state = {}, action) => {
   }
 }
 
-const todos = (state = [], action) => {
-  console.log('action: ', action.type)
+const todos = (state = defaultState, action) => {
+  console.log('in root reducer action: ', action.type)
   switch (action.type) {
     case 'ADD_CARD':
-      return [
+      return {
         ...state,
-        todo(undefined, action)
-      ]
+        deck: todo(state.deck, action),
+      }
     case 'TOGGLE_TODO':
       return state.map(t =>
         todo(t, action)
