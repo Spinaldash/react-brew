@@ -65,6 +65,7 @@ body {
   justify-content: space-around;
 
 }
+
 .card-preview-item {
   background: purple;
   padding: 5px;
@@ -76,5 +77,11 @@ body {
   color: white;
   font-weight: bold;
   font-size: .3em;
+  text-align: center;
+}
+
+.set-option {
+  border: solid black;
+  width: 2.5em;
   text-align: center;
 }

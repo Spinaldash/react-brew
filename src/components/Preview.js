@@ -6,7 +6,7 @@ class Preview extends React.Component {
   props = this.props;
   render() {
     // TODO: We should only be providing this element with the exact state it uses aka the deck, not the entire state obj.
-    let previewCards = this.props.state.deck.map((currentCard) => <PreviewCard {...currentCard} onCardClick={this.props.onCardClick} key={currentCard.id}></PreviewCard>);
+    // let previewCards = this.props.state.deck.map((currentCard) => <PreviewCard {...currentCard} onCardClick={this.props.onCardClick} key={currentCard.id}></PreviewCard>);
     return (
       <div className="preview-view-item">
         <p>Deck Preview</p>
@@ -15,7 +15,7 @@ class Preview extends React.Component {
           <PreviewCard cardName="2" onCardClick={this.props.onCardClick}></PreviewCard>
           <PreviewCard cardName="3" onCardClick={this.props.onCardClick}></PreviewCard>
           <PreviewCard cardName="4" onCardClick={this.props.onCardClick}></PreviewCard>
-          {previewCards}
+          { /* previewCards */}
         </div>
       </div>
     )

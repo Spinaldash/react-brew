@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import { addCard } from '../actions/index'
 
 const mapStateToProps = (state) => {
-  const { deck } = state
+  // some super-kawaii destructuring 😊
+  const { deck } = state;
   // Currently converting the deck array into an object to populate
   // in that props of Preview. We need to start working with
   // semi-real data and make sure we are modeling/massaging the correct
   // architechture that scales best
   const deckObj = deck.reduce((acc, cur, i) => {
-    const id = cur.id
+    const id = cur.id;
     acc[id] = cur;
     return acc;
   }, {});
