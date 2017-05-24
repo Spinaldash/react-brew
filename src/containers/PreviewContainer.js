@@ -14,14 +14,14 @@ const mapStateToProps = (state) => {
     acc[id] = cur;
     return acc;
   }, {});
-  console.log('deckObj: ', deckObj)
-  return deckObj
+  return {deck: deckObj}
 }
 
 const mapDispatchToProps = (dispatch) => {
+  // TODO: consider renaming the onCardclick function, its overly specific and inaccurate
   return {
     onCardClick: (text) => {
-      dispatch(addCard(text))
+      dispatch(addCard(text));
     }
   }
 }
