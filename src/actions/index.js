@@ -1,10 +1,10 @@
 let nextCardId = 0
-export const addCard = (cardName) => {
-  // TODO: Fix this action to only have a type & payload (FSA compliant)
+export const addCard = (miniCard) => {
+  // To add a card to the deck you provide a miniCard -
+  console.log('addCard happening, miniCard: ', miniCard);
   return {
-    type: 'ADD_CARD',
-    id: nextCardId++,
-    cardName
+    type: 'ADD_DECK_CARD',
+    payload: miniCard
   }
 }
 export const loadSamples = () => {

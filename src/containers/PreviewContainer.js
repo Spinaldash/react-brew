@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addCard } from '../actions/index'
 
 const mapStateToProps = (state) => {
-  // some super-kawaii destructuring 😊
+  // destructuring 😊
   const { deck } = state;
   return { deck }
 }

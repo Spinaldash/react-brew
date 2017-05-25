@@ -13,7 +13,7 @@ import React from 'react';
 // 	"subtypes" : ["Human", "Wizard"],
 //
 // 	"rarity" : "Mythic Rare",
-// 
+//
 // 	"text" : "At the beginning of your upkeep, choose target opponent.
 // 	         This turn, that player can't cast spells or activate
 // 	         abilities and plays with his or her hand revealed.
@@ -33,8 +33,11 @@ import React from 'react';
 // 	"id" : "3129aee7f26a4282ce131db7d417b1bc3338c4d4"
 // }
 
-const LibraryCard = ({onCardClick, name}) => (
-  <div className='card-item' onClick={() => {onCardClick(name)}}>{name}</div>
-)
+const LibraryCard = ({onCardClick, name, multiverseid}) => {
+  const minicard = {multiverseid, name}
+    return (
+      <div className='card-item' onClick={() => {onCardClick(minicard)}}>{name}</div>
+    )
+}
 
 export default LibraryCard;

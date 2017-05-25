@@ -5,15 +5,24 @@ import { defaultState } from '../data/sampleData';
 // Changes are made with pure functions
 
 // TODO: Holy fuck these variable names
-const todo = (state = [], action) => {
+const todo = (state = {}, action) => {
   switch (action.type) {
-    case 'ADD_CARD':
-      return [...state, {
-        id: action.id,
-        cardName: action.cardName,
-        completed: false,
-        count: '1'
-      }]
+    case 'ADD_DECK_CARD':
+      //find id, check to see if its in there if so increment, if not add it
+      const multi = action.payload.multiverseid
+      let newState = { ...state }
+      if (state[multi]) {
+        // The Card is already in the deck, increment the count
+        newState[multi].count = newState[multi].count + 1 || 1
+      } else {
+        // The Card is new, add it to the deck.
+        newState[multi] = { ...action.payload }
+        newState[multi].count = 1
+      }
+      return {
+        ...newState
+      }
+
     case 'ADD_LIBRARY_SOURCE':
       return {
         ...state,
@@ -35,8 +44,8 @@ const todo = (state = [], action) => {
 
 const todos = (state = defaultState, action) => {
   switch (action.type) {
-    case 'ADD_CARD':
-      // Does this replace the deck or add to it? replace, but it copies over the old deck. 
+    case 'ADD_DECK_CARD':
+      // Does this replace the deck or add to it? replace, but it copies over the old deck.
       return {
         ...state,
         deck: todo(state.deck, action),

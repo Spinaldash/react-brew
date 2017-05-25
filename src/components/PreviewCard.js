@@ -1,14 +1,7 @@
 import React from 'react';
 
-// class PreviewCard extends React.Component {
-//   render() {
-//     return (
-//       <div className="card-preview-item">{this.props.cardName}</div>
-//     )
-//   }
-// }
-const PreviewCard = ({name, onCardClick}) => (
-  <div onClick={() => {onCardClick(name)}} className="card-preview-item">{name}</div>
+const PreviewCard = ({name, onCardClick, count}) => (
+  <div onClick={() => {onCardClick(name)}} className="card-preview-item">{name}: {count}</div>
 )
 
 export default PreviewCard;
