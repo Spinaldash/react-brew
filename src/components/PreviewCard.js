@@ -7,8 +7,8 @@ import React from 'react';
 //     )
 //   }
 // }
-const PreviewCard = ({cardName, onCardClick}) => (
-  <div onClick={() => {onCardClick(cardName)}} className="card-preview-item">{cardName}</div>
+const PreviewCard = ({name, onCardClick}) => (
+  <div onClick={() => {onCardClick(name)}} className="card-preview-item">{name}</div>
 )
 
 export default PreviewCard;

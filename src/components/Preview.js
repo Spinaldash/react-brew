@@ -5,17 +5,14 @@ import PropTypes from 'prop-types';
 class Preview extends React.Component {
   props = this.props;
   render() {
-    // let previewCards = this.props.deck.map((currentCard) => <PreviewCard {...currentCard} onCardClick={this.props.onCardClick} key={currentCard.id}></PreviewCard>);
+    const currentDeck = this.props.deck
+    const previewCards = Object.keys(currentDeck).map((multiverseid) => <PreviewCard {...currentDeck[multiverseid]} onCardClick={this.props.onCardClick} key={multiverseid}></PreviewCard>);
 
     return (
       <div className="preview-view-item">
         <p>Deck Preview</p>
         <div className="card-preview-container">
-          <PreviewCard cardName="1" onCardClick={this.props.onCardClick}></PreviewCard>
-          <PreviewCard cardName="2" onCardClick={this.props.onCardClick}></PreviewCard>
-          <PreviewCard cardName="3" onCardClick={this.props.onCardClick}></PreviewCard>
-          <PreviewCard cardName="4" onCardClick={this.props.onCardClick}></PreviewCard>
-          { /* previewCards */}
+          { previewCards }
         </div>
       </div>
     )

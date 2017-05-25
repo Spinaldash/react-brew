@@ -1,8 +1,8 @@
 export const defaultState = {
   library: {},
-  deck:[
-    {id: 101, count: 2, cardName: 'Lighting Bolt'},
-    {id: 102, count: 1, cardName: 'Dark Ritual'},
-    {id: 103, count: 3, cardName: 'Ancestral Recall'},
-  ]
+  deck:{
+    101: {multiverseid: 101, count: 2, name: 'Lighting Bolt'},
+    102: {multiverseid: 102, count: 1, name: 'Dark Ritual'},
+    103: {multiverseid: 103, count: 3, name: 'Ancestral Recall'},
+  }
 }
