@@ -1,7 +1,7 @@
 import request from 'request-promise-native';
 
 // Setloader takes a set abbrviation code and
-// returns a promise(!) for an object of the cards in that set
+// returns a promise(!) for an object of the cards in that set by multiverseid
 export function setLoader(set){
   return new Promise((resolve, reject) => {
     const options = {

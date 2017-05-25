@@ -5,18 +5,22 @@ import { setLoader } from '../helpers/setLoader'
 
 class Library extends React.Component {
   loadSet(set) {
-    console.log('running loadSet: ', set)
     setLoader(set)
-    .then((data) =>  console.log('setLoader returned: ', data))
-    .catch((err) => console.error('Error Beep boo: ', err))
+    .then((data) =>  {
+      this.props.addLibrarySource(data)
+    })
+    .catch((err) => console.error('Error Beep boo: ', err));
   }
 
   render() {
-    let libraryCards = this.props.state.library.map((currentCard) => <LibraryCard {...currentCard} onCardClick={this.props.onCardClick} key={currentCard.id}></LibraryCard>);
+    let libraryCards = Object.keys(this.props.state.library).map((id) => <LibraryCard {...this.props.state.library[id]} onCardClick={this.props.onCardClick} key={id}></LibraryCard>);
+
+    // TODO: Turn the AddSet Buttons into it's own bar
     return (
       <div className="library-view-item">
         <p>Library</p>
-        <div className="set-option" onClick={() => this.loadSet('AKH')}>AKH</div>
+        <span className="set-option" onClick={() => this.loadSet('AKH')}>AKH</span>
+        <span className="set-option" onClick={() => this.loadSet('2ED')}>2ED</span>
         <div className='card-dock-container'>
           {libraryCards}
         </div>

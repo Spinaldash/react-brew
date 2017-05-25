@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addLibrarySource: (card) => {
-      dispatch(addLibrarySource(card));
+    addLibrarySource: (cards) => {
+      dispatch(addLibrarySource(cards));
     },
     onCardClick: (text) => {
       dispatch(addCard(text));

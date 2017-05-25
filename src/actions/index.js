@@ -12,9 +12,9 @@ export const loadSamples = () => {
     type: 'LOAD_SAMPLES',
   }
 }
-export const addLibrarySource = (card) => {
+export const addLibrarySource = (cards) => {
   return {
     type: 'ADD_LIBRARY_SOURCE',
-    payload: card
+    payload: cards
   }
 }

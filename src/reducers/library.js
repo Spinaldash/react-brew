@@ -1,5 +1,10 @@
 import { defaultState } from '../data/sampleData';
 
+// Single source of truth
+// State is read-only
+// Changes are made with pure functions
+
+// TODO: Holy fuck these variable names
 const todo = (state = [], action) => {
   switch (action.type) {
     case 'ADD_CARD':
@@ -9,6 +14,11 @@ const todo = (state = [], action) => {
         completed: false,
         count: '1'
       }]
+    case 'ADD_LIBRARY_SOURCE':
+      return {
+        ...state,
+        ...action.payload
+      }
     case 'TOGGLE_TODO':
       if (state.id !== action.id) {
         return state
@@ -26,9 +36,15 @@ const todo = (state = [], action) => {
 const todos = (state = defaultState, action) => {
   switch (action.type) {
     case 'ADD_CARD':
+      // Does this replace the deck or add to it? replace, but it copies over the old deck. 
       return {
         ...state,
         deck: todo(state.deck, action),
+      }
+    case 'ADD_LIBRARY_SOURCE':
+      return {
+        ...state,
+        library: todo(state.library, action),
       }
     case 'TOGGLE_TODO':
       return state.map(t =>
