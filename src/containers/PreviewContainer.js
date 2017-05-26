@@ -1,6 +1,6 @@
 import Preview from '../components/Preview';
 import { connect } from 'react-redux';
-import { addCard } from '../actions/index'
+import { subtractCard } from '../actions/index'
 
 const mapStateToProps = (state) => {
   // destructuring 😊
@@ -11,8 +11,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   // TODO: consider renaming the onCardclick function, its overly specific and inaccurate
   return {
-    onCardClick: (text) => {
-      dispatch(addCard(text));
+    onCardClick: (minicard) => {
+      dispatch(subtractCard(minicard));
     }
   }
 }

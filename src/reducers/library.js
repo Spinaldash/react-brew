@@ -1,4 +1,5 @@
 import { defaultState } from '../data/sampleData';
+import { addDeckCard, subtractDeckCard } from './reducerFunctions';
 
 // Single source of truth
 // State is read-only
@@ -8,34 +9,16 @@ import { defaultState } from '../data/sampleData';
 const todo = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_DECK_CARD':
-      //find id, check to see if its in there if so increment, if not add it
-      const multi = action.payload.multiverseid
-      let newState = { ...state }
-      if (state[multi]) {
-        // The Card is already in the deck, increment the count
-        newState[multi].count = newState[multi].count + 1 || 1
-      } else {
-        // The Card is new, add it to the deck.
-        newState[multi] = { ...action.payload }
-        newState[multi].count = 1
-      }
-      return {
-        ...newState
-      }
+      return addDeckCard(state, action)
+
+    case 'SUBTRACT_DECK_CARD':
+      return subtractDeckCard(state, action)
 
     case 'ADD_LIBRARY_SOURCE':
       return {
         ...state,
         ...action.payload
       }
-    case 'TOGGLE_TODO':
-      if (state.id !== action.id) {
-        return state
-      }
-
-      return Object.assign({}, state, {
-        completed: !state.completed
-      })
 
     default:
       return state
@@ -50,15 +33,16 @@ const todos = (state = defaultState, action) => {
         ...state,
         deck: todo(state.deck, action),
       }
+    case 'SUBTRACT_DECK_CARD':
+      return {
+        ...state,
+        deck: todo(state.deck, action),
+      }
     case 'ADD_LIBRARY_SOURCE':
       return {
         ...state,
         library: todo(state.library, action),
       }
-    case 'TOGGLE_TODO':
-      return state.map(t =>
-        todo(t, action)
-      )
     default:
       return state
   }
