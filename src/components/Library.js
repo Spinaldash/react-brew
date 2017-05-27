@@ -21,6 +21,8 @@ class Library extends React.Component {
         <p>Library</p>
         <span className="set-option" onClick={() => this.loadSet('AKH')}>AKH</span>
         <span className="set-option" onClick={() => this.loadSet('2ED')}>2ED</span>
+        <span className="set-option" onClick={() => this.loadSet('DRK')}>DRK</span>
+        <span className="set-option" onClick={() => this.loadSet('HML')}>HML</span>
         <div className='card-dock-container'>
           {libraryCards}
         </div>
