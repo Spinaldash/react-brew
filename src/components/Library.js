@@ -12,6 +12,15 @@ class Library extends React.Component {
     .catch((err) => console.error('Error Beep boo: ', err));
   }
 
+  loadStandard() {
+    // Will eventually use "http://whatsinstandard.com/api/4/sets.json" to find out whatsinstandard
+    const standard = ['AHK', 'M15']
+    for (const value of standard) {
+      console.log(value);
+    }
+
+  }
+
   render() {
     let libraryCards = Object.keys(this.props.state.library).map((id) => <LibraryCard {...this.props.state.library[id]} onCardClick={this.props.onCardClick} key={id}></LibraryCard>);
 
@@ -23,6 +32,7 @@ class Library extends React.Component {
         <span className="set-option" onClick={() => this.loadSet('2ED')}>2ED</span>
         <span className="set-option" onClick={() => this.loadSet('DRK')}>DRK</span>
         <span className="set-option" onClick={() => this.loadSet('HML')}>HML</span>
+        <span className="set-option" onClick={() => this.loadStandard()}>TEST</span>
         <div className='card-dock-container'>
           {libraryCards}
         </div>
