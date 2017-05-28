@@ -1,6 +1,7 @@
 import React from 'react';
 import LibraryCard from './LibraryCard'
 import { setLoader } from '../helpers/setLoader'
+import { whatsInStandard } from '../helpers/inStandard'
 
 
 class Library extends React.Component {
@@ -13,12 +14,12 @@ class Library extends React.Component {
   }
 
   loadStandard() {
-    // Will eventually use "http://whatsinstandard.com/api/4/sets.json" to find out whatsinstandard
-    const standard = ['AHK', 'M15']
-    for (const value of standard) {
-      console.log(value);
-    }
-
+    whatsInStandard()
+    .then((setsInStandard) => {
+      for (const set of setsInStandard) {
+        this.loadSet(set)
+      }
+    })
   }
 
   render() {
@@ -29,10 +30,7 @@ class Library extends React.Component {
       <div className="library-view-item">
         <p>Library</p>
         <span className="set-option" onClick={() => this.loadSet('AKH')}>AKH</span>
-        <span className="set-option" onClick={() => this.loadSet('2ED')}>2ED</span>
-        <span className="set-option" onClick={() => this.loadSet('DRK')}>DRK</span>
-        <span className="set-option" onClick={() => this.loadSet('HML')}>HML</span>
-        <span className="set-option" onClick={() => this.loadStandard()}>TEST</span>
+        <span className="set-option" onClick={() => this.loadStandard()}>Standard</span>
         <div className='card-dock-container'>
           {libraryCards}
         </div>

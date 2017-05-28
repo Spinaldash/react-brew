@@ -23,7 +23,7 @@ export function setLoader(set){
         resolve(cardsObj);
       })
       .catch((err) => {
-        reject(err)
+        reject("setLoader.js: " + err)
       });
   });
 }
